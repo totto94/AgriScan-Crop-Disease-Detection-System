@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - AgriScan{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2>📊 Admin Dashboard</h2>
+        <p class="text-muted">Welcome back, {{ admin_name }}!</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3 shadow">
+            <div class="card-body">
+                <h5 class="card-title">👤 Total Farmers</h5>
+                <h2 class="display-4">{{ total_farmers }}</h2>
+                <p class="card-text">Registered farmers</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3 shadow">
+            <div class="card-body">
+                <h5 class="card-title">🩺 Total Diagnoses</h5>
+                <h2 class="display-4">{{ total_diagnoses }}</h2>
+                <p class="card-text">All diagnoses made</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3 shadow">
+            <div class="card-body">
+                <h5 class="card-title">🤖 Chatbot</h5>
+                <h2 class="display-4">24/7</h2>
+                <p class="card-text">AI-powered support</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <i class="bi bi-people"></i> Farmer Management
+            </div>
+            <div class="card-body">
+                <a href="{{ url_for('admin_users') }}" class="btn btn-outline-primary w-100 mb-2">
+                    <i class="bi bi-people"></i> View All Farmers
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <i class="bi bi-file-medical"></i> Diagnosis Management
+            </div>
+            <div class="card-body">
+                <a href="{{ url_for('admin_diagnoses') }}" class="btn btn-outline-success w-100 mb-2">
+                    <i class="bi bi-file-medical"></i> View All Diagnoses
+                </a>
+                <a href="{{ url_for('admin_chatbot') }}" class="btn btn-outline-warning w-100">
+                    <i class="bi bi-robot"></i> Chatbot
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - AgriScan{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2>📊 Dashboard</h2>
+        <p class="text-muted">Welcome back, {{ user.fullName if user else 'Farmer' }}!</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3 shadow">
+            <div class="card-body">
+                <h5 class="card-title">🩺 Diagnoses</h5>
+                <h2 class="display-4">{{ total_diagnoses }}</h2>
+                <p class="card-text">Total diagnoses made</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3 shadow">
+            <div class="card-body">
+                <h5 class="card-title">📍 Location</h5>
+                <h5 class="card-text">{{ user.location if user and user.location else 'Not set' }}</h5>
+                <p class="card-text">Your registered location</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3 shadow">
+            <div class="card-body">
+                <h5 class="card-title">🤖 Chatbot</h5>
+                <h2 class="display-4">24/7</h2>
+                <p class="card-text">AI-powered farming assistant</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <i class="bi bi-robot"></i> Quick Actions
+            </div>
+            <div class="card-body">
+                <a href="{{ url_for('diagnosis') }}" class="btn btn-outline-success w-100 mb-2">
+                    <i class="bi bi-camera"></i> Start Diagnosis
+                </a>
+                <a href="{{ url_for('history') }}" class="btn btn-outline-primary w-100 mb-2">
+                    <i class="bi bi-clock-history"></i> View History
+                </a>
+                <a href="{{ url_for('farmer_chatbot') }}" class="btn btn-outline-warning w-100">
+                    <i class="bi bi-robot"></i> Chat with AI
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-info text-white">
+                <i class="bi bi-info-circle"></i> System Info
+            </div>
+            <div class="card-body">
+                <p><strong>Status:</strong> <span class="badge bg-success">Online</span></p>
+                <p><strong>Offline Mode:</strong> <span class="badge bg-info">Supported</span></p>
+                <p><strong>Joined:</strong> {{ user.createdAt if user and user.createdAt else 'N/A' }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

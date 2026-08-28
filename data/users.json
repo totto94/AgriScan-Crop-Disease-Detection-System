@@ -1,0 +1,500 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Admin User",
+      "email": "admin@agriscan.com",
+      "password": "admin123",
+      "userType": "admin",
+      "location": "Nairobi",
+      "createdAt": "2025-01-01",
+      "diagnoses": []
+    },
+    {
+      "id": 2,
+      "fullName": "Fama Francis",
+      "email": "fama1@agriscan.com",
+      "password": "qwerty",
+      "userType": "farmer",
+      "location": "Nairobi",
+      "createdAt": "2026-07-31 02:16",
+      "diagnoses": [
+        {
+          "id": 1,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 91,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/6bce7b9d9235479e8eda0133015e04c4_imag.jpg",
+          "timestamp": "2026-07-31 02:16"
+        },
+        {
+          "id": 2,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 89,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/0d7ce1c4151f43669b188fa7fd248f9e_marssonia-leaf-spot-on-euonymus-grabowski.jpg",
+          "timestamp": "2026-07-31 02:17"
+        },
+        {
+          "id": 3,
+          "diseaseName": "Late Blight",
+          "confidence": 85,
+          "treatment": "Apply mancozeb fungicides. Remove infected plants.",
+          "imagePath": "/static/uploads/305fb9f82d2d497093168d92dbdcc5e3_images32.jpg",
+          "timestamp": "2026-07-31 02:17"
+        },
+        {
+          "id": 4,
+          "diseaseName": "Early Blight",
+          "confidence": 80,
+          "treatment": "Apply copper-based fungicides. Remove infected leaves.",
+          "imagePath": "/static/uploads/0f5c90d81bcd4fd1aa1c591174b9b910_q.jpg",
+          "timestamp": "2026-07-31 02:17"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullName": "Mama Mboga",
+      "email": "mboga@agriscan.com",
+      "password": "qwerty",
+      "userType": "farmer",
+      "location": "Kiambu",
+      "createdAt": "2026-07-31 02:18",
+      "diagnoses": [
+        {
+          "id": 1,
+          "diseaseName": "Leaf Mold",
+          "confidence": 91,
+          "treatment": "Reduce humidity. Apply sulfur-based fungicides.",
+          "imagePath": "/static/uploads/01b6e72d8fea4a0bb7a580d4fb6b9212_carver25.jpg",
+          "timestamp": "2026-07-31 02:19"
+        },
+        {
+          "id": 2,
+          "diseaseName": "Early Blight",
+          "confidence": 85,
+          "treatment": "Apply copper-based fungicides. Remove infected leaves.",
+          "imagePath": "/static/uploads/6b8bbcfce4b74ac69526686faa52c065_images.jpg",
+          "timestamp": "2026-07-31 02:19"
+        },
+        {
+          "id": 3,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 99,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/cbf9502949904db788313a58d43d9ae9_images32.jpg",
+          "timestamp": "2026-07-31 02:19"
+        },
+        {
+          "id": 4,
+          "diseaseName": "Late Blight",
+          "confidence": 99,
+          "treatment": "Apply mancozeb fungicides. Remove infected plants.",
+          "imagePath": "/static/uploads/76a1fb7b0077409783c8650aa1de22bd_q.jpg",
+          "timestamp": "2026-07-31 02:19"
+        },
+        {
+          "id": 5,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 85,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/8d1b2b600908447db0931fe3b87c536e_qw.jpg",
+          "timestamp": "2026-07-31 02:19"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "fullName": "Florist Fama",
+      "email": "florist@agriscan.com",
+      "password": "qwerty",
+      "userType": "farmer",
+      "location": "Nakuru",
+      "createdAt": "2026-07-31 02:21",
+      "diagnoses": [
+        {
+          "id": 1,
+          "diseaseName": "Leaf Mold",
+          "confidence": 85,
+          "treatment": "Reduce humidity. Apply sulfur-based fungicides.",
+          "imagePath": "/static/uploads/5f35b64ed3de43e0aee6dfc7e2e69b1b_4.jpg",
+          "timestamp": "2026-07-31 02:21"
+        },
+        {
+          "id": 2,
+          "diseaseName": "Early Blight",
+          "confidence": 83,
+          "treatment": "Apply copper-based fungicides. Remove infected leaves.",
+          "imagePath": "/static/uploads/5bf26a2ea63043428e8a44ec4aaffb31_marssonia-leaf-spot-on-euonymus-grabowski.jpg",
+          "timestamp": "2026-07-31 02:21"
+        },
+        {
+          "id": 3,
+          "diseaseName": "Early Blight",
+          "confidence": 97,
+          "treatment": "Apply copper-based fungicides. Remove infected leaves.",
+          "imagePath": "/static/uploads/0b5edb481b8943c7b0f0964fe5a9bf3a_qw.jpg",
+          "timestamp": "2026-07-31 02:21"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "fullName": "Jessy Tibi",
+      "email": "tibi@agriscan.com",
+      "password": "qwerty123",
+      "userType": "farmer",
+      "location": "Nairobi",
+      "createdAt": "2026-07-31 10:07",
+      "diagnoses": [
+        {
+          "id": 1,
+          "diseaseName": "Early Blight",
+          "confidence": 80,
+          "treatment": "Apply copper-based fungicides. Remove infected leaves.",
+          "imagePath": "/static/uploads/3f222d4aa6e346ae9a39f51983b9bdab_q.jpg",
+          "timestamp": "2026-07-31 10:08"
+        },
+        {
+          "id": 2,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 92,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/af00248a6b794774872a95ea404758da_images.jpg",
+          "timestamp": "2026-07-31 10:08"
+        },
+        {
+          "id": 3,
+          "diseaseName": "Healthy",
+          "confidence": 99,
+          "treatment": "Plant is healthy. Continue good agricultural practices.",
+          "imagePath": "/static/uploads/d629486ccf5a4dcaabd5989b78d58721_imag.jpg",
+          "timestamp": "2026-07-31 10:59"
+        },
+        {
+          "id": 4,
+          "diseaseName": "Leaf Mold",
+          "confidence": 82,
+          "treatment": "Reduce humidity. Apply sulfur-based fungicides.",
+          "imagePath": "/static/uploads/73b2ca3eef4a421187ca6c2406de30af_4-fern_spore_honey_bee_ccby20_1HAWjMP.jpg",
+          "timestamp": "2026-07-31 11:00"
+        },
+        {
+          "id": 5,
+          "diseaseName": "Late Blight",
+          "confidence": 95,
+          "treatment": "Apply mancozeb fungicides. Remove infected plants.",
+          "imagePath": "/static/uploads/01705eeba10a40ceadceb193cb93a808_q.jpg",
+          "timestamp": "2026-07-31 11:04"
+        },
+        {
+          "id": 6,
+          "diseaseName": "Bacterial Spot",
+          "confidence": 96,
+          "treatment": "Remove infected leaves. Avoid wetting foliage.",
+          "imagePath": "/static/uploads/4c24bc120b2f4cf69022cba966dd14e3_images.jpg",
+          "timestamp": "2026-07-31 11:34"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "fullName": "Jonathan Farmer",
+      "email": "jonathan@farm.com",
+      "password": "qwerty",
+      "userType": "farmer",
+      "location": "Nairobi",
+      "createdAt": "2026-08-04 15:22",
+      "diagnoses": [
+        {
+          "id": 1,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 93,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/4a36d2057c7b4897887aefd40a78fdb6_q.jpg",
+          "timestamp": "2026-08-04 15:23"
+        },
+        {
+          "id": 2,
+          "diseaseName": "Late Blight",
+          "confidence": 97,
+          "treatment": "Apply mancozeb fungicides. Remove infected plants.",
+          "imagePath": "/static/uploads/1a4a4b19bd9346c4acc62d4821cbca07_4-fern_spore_honey_bee_ccby20_1HAWjMP.jpg",
+          "timestamp": "2026-08-04 15:23"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "fullName": "Jonathan wani",
+      "email": "wanijonathan893@email.com",
+      "password": "Hussein2026",
+      "userType": "farmer",
+      "location": "Nairobi",
+      "createdAt": "2026-08-10 20:25",
+      "diagnoses": [
+        {
+          "id": 1,
+          "diseaseName": "Bacterial Spot",
+          "confidence": 89,
+          "treatment": "Remove infected leaves. Avoid wetting foliage.",
+          "imagePath": "/static/uploads/09cc94c4c3bb490a9260adb3302092f5_q.jpg",
+          "timestamp": "2026-08-10 20:30"
+        },
+        {
+          "id": 2,
+          "diseaseName": "Late Blight",
+          "confidence": 91,
+          "treatment": "Apply mancozeb fungicides. Remove infected plants.",
+          "imagePath": "/static/uploads/176b43a7e4d34605b06da8d5bd72e004_qw.jpg",
+          "timestamp": "2026-08-10 20:31"
+        },
+        {
+          "id": 3,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 83,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/b2dfc2d66fc1442e8a91ca154165d632_image3.jpg",
+          "timestamp": "2026-08-10 20:32"
+        },
+        {
+          "id": 4,
+          "diseaseName": "Healthy",
+          "confidence": 86,
+          "treatment": "Plant is healthy. Continue good agricultural practices.",
+          "imagePath": "/static/uploads/8c05391f90e542d4854236e0bcb978ed_imag.jpg",
+          "timestamp": "2026-08-10 20:40"
+        },
+        {
+          "id": 5,
+          "diseaseName": "Bacterial Spot",
+          "confidence": 89,
+          "treatment": "Remove infected leaves. Avoid wetting foliage.",
+          "imagePath": "/static/uploads/71e1c284b37a4376ac3487b825f5adc0_carver25.jpg",
+          "timestamp": "2026-08-10 20:41"
+        },
+        {
+          "id": 6,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 86,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/03772367aec34bb188fe4ee261a6c84f_4-fern_spore_honey_bee_ccby20_1HAWjMP.jpg",
+          "timestamp": "2026-08-10 20:45"
+        },
+        {
+          "id": 7,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 85,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/3beade0835b74af3aebe77a449d94835_marssonia-leaf-spot-on-euonymus-grabowski.jpg",
+          "timestamp": "2026-08-10 20:46"
+        },
+        {
+          "id": 8,
+          "diseaseName": "Bacterial Spot",
+          "confidence": 95,
+          "treatment": "Remove infected leaves. Avoid wetting foliage.",
+          "imagePath": "/static/uploads/1582c5583e274c71a6820667f5010814_4.jpg",
+          "timestamp": "2026-08-10 20:47"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "fullName": "Farmer Francis",
+      "email": "fama@agriscan.com",
+      "password": "qwerty123",
+      "userType": "farmer",
+      "location": "Kiambu",
+      "createdAt": "2026-08-19 22:39",
+      "diagnoses": [
+        {
+          "id": 1,
+          "diseaseName": "Bacterial Spot",
+          "confidence": 90,
+          "treatment": "Remove infected leaves. Avoid wetting foliage.",
+          "imagePath": "/static/uploads/658a051438fc4278889908aa829e9644_images32.jpg",
+          "timestamp": "2026-08-19 22:42"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "fullName": "Farmer Johns",
+      "email": "jonhs@agriscan.com",
+      "password": "Qwerty123",
+      "userType": "farmer",
+      "location": "Nairobi",
+      "createdAt": "2026-08-28 18:13",
+      "diagnoses": [
+        {
+          "id": 1,
+          "diseaseName": "Leaf Mold",
+          "confidence": 81,
+          "treatment": "Reduce humidity. Apply sulfur-based fungicides.",
+          "imagePath": "/static/uploads/c3881e635e514287b16554698b518f27_4-fern_spore_honey_bee_ccby20_1HAWjMP.jpg",
+          "timestamp": "2026-08-28 18:14"
+        },
+        {
+          "id": 2,
+          "diseaseName": "Late Blight",
+          "confidence": 90,
+          "treatment": "Apply mancozeb fungicides. Remove infected plants.",
+          "imagePath": "/static/uploads/9ced5416581f47638ac28625b8405e16_image3.jpg",
+          "timestamp": "2026-08-28 18:15"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "fullName": "Farmer Francis",
+      "email": "francis@agriscan.com",
+      "password": "Qwerty123",
+      "userType": "farmer",
+      "location": "Nairobi",
+      "createdAt": "2026-08-28 18:28",
+      "diagnoses": [
+        {
+          "id": 1,
+          "diseaseName": "Leaf Mold",
+          "confidence": 81,
+          "treatment": "Reduce humidity. Apply sulfur-based fungicides.",
+          "imagePath": "/static/uploads/f58e2f7ab2684bec9c93ccd8ea7ca512_4-fern_spore_honey_bee_ccby20_1HAWjMP.jpg",
+          "timestamp": "2026-08-28 18:30"
+        },
+        {
+          "id": 2,
+          "diseaseName": "Septoria Leaf Spot",
+          "confidence": 99,
+          "treatment": "Remove infected leaves. Improve air circulation.",
+          "imagePath": "/static/uploads/77622fc81bfc4024ba7b37b4221ef13b_image3.jpg",
+          "timestamp": "2026-08-28 18:30"
+        }
+      ]
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "farmer_id": 2,
+      "farmer_name": "Fama Francis",
+      "expert_id": 1,
+      "date": "2026-08-03",
+      "time": "14:00",
+      "notes": "Inquiry",
+      "status": "pending",
+      "created_at": "2026-07-31 02:28"
+    },
+    {
+      "id": 2,
+      "farmer_id": 2,
+      "farmer_name": "Fama Francis",
+      "expert_id": 2,
+      "date": "2026-08-07",
+      "time": "15:00",
+      "notes": "Fertilizer",
+      "status": "pending",
+      "created_at": "2026-07-31 02:29"
+    },
+    {
+      "id": 3,
+      "farmer_id": 4,
+      "farmer_name": "Florist Fama",
+      "expert_id": 2,
+      "date": "2026-08-08",
+      "time": "15:00",
+      "notes": "Manure Inquiry",
+      "status": "pending",
+      "created_at": "2026-07-31 02:30"
+    },
+    {
+      "id": 4,
+      "farmer_id": 5,
+      "farmer_name": "Jessy Tibi",
+      "expert_id": 2,
+      "date": "2026-08-01",
+      "time": "15:00",
+      "notes": "Manure Inquiry",
+      "status": "pending",
+      "created_at": "2026-07-31 10:10"
+    },
+    {
+      "id": 5,
+      "farmer_id": 5,
+      "farmer_name": "Jessy Tibi",
+      "expert_id": 2,
+      "date": "2026-08-01",
+      "time": "15:00",
+      "notes": "manure",
+      "status": "pending",
+      "created_at": "2026-07-31 11:00"
+    },
+    {
+      "id": 6,
+      "farmer_id": 6,
+      "farmer_name": "Jonathan Farmer",
+      "expert_id": 1,
+      "date": "2026-08-05",
+      "time": "15:00",
+      "notes": "Consultation",
+      "status": "pending",
+      "created_at": "2026-08-04 15:24"
+    },
+    {
+      "id": 7,
+      "farmer_id": 7,
+      "farmer_name": "Jonathan wani",
+      "expert_id": 1,
+      "date": "2026-08-31",
+      "time": "16:00",
+      "notes": "Manure consultation",
+      "status": "pending",
+      "created_at": "2026-08-10 20:36"
+    },
+    {
+      "id": 8,
+      "farmer_id": 7,
+      "farmer_name": "Jonathan wani",
+      "expert_id": 2,
+      "date": "2026-08-31",
+      "time": "16:00",
+      "notes": "manual consulation",
+      "status": "pending",
+      "created_at": "2026-08-10 20:37"
+    },
+    {
+      "id": 9,
+      "farmer_id": 8,
+      "farmer_name": "Farmer Francis",
+      "expert_id": 2,
+      "date": "2026-08-21",
+      "time": "15:00",
+      "notes": "Manure Availability Inquiry",
+      "status": "pending",
+      "created_at": "2026-08-19 22:45"
+    },
+    {
+      "id": 10,
+      "farmer_id": 9,
+      "farmer_name": "Farmer Johns",
+      "expert_id": 2,
+      "date": "2026-09-01",
+      "time": "11:00",
+      "notes": "Manure Inquiry",
+      "status": "pending",
+      "created_at": "2026-08-28 18:17"
+    },
+    {
+      "id": 11,
+      "farmer_id": 10,
+      "farmer_name": "Farmer Francis",
+      "expert_id": 2,
+      "date": "2026-09-01",
+      "time": "11:00",
+      "notes": "Manure Inquiry",
+      "status": "pending",
+      "created_at": "2026-08-28 18:32"
+    }
+  ]
+}

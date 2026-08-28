@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Login - AgriScan{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-10">
+        <div class="row">
+            <!-- Left Column: Welcome Message -->
+            <div class="col-md-6">
+                <div class="card shadow h-100">
+                    <div class="card-body p-5 d-flex flex-column justify-content-center">
+                        <h1 class="display-4 text-success mb-3">🌿 AgriScan</h1>
+                        <h4 class="mb-3">AI-Powered Crop Disease Detection</h4>
+                        <p class="text-muted">
+                            AgriScan helps smallholder farmers detect crop diseases quickly and accurately.
+                            Simply upload a photo of your crop leaf and get instant diagnosis with treatment recommendations.
+                        </p>
+                        <div class="mt-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-success me-2">✓</span>
+                                <span>Instant disease detection</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-success me-2">✓</span>
+                                <span>Treatment recommendations</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-success me-2">✓</span>
+                                <span>Book appointments with experts</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-success me-2">✓</span>
+                                <span>AI-powered farming assistant</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="text-muted small mb-0">
+                            <strong>🌍 Empowering farmers in Kenya</strong><br>
+                            Offline capable • Free to use • Works on any device
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Login Form -->
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body p-5">
+                        <h3 class="text-center mb-2">👋 Welcome Back</h3>
+                        <p class="text-center text-muted mb-4">Login to your farmer account</p>
+
+                        <form method="POST">
+                            <div class="mb-3">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" name="email" class="form-control" required placeholder="Enter your email">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control" required placeholder="Enter your password">
+                            </div>
+                            <button type="submit" class="btn btn-success w-100 py-2">Login</button>
+                        </form>
+
+                        <hr class="my-4">
+
+                        <p class="text-center mb-0">
+                            Don't have an account? <a href="{{ url_for('signup') }}" class="text-success">Sign Up</a>
+                        </p>
+
+                        <p class="text-center mt-3 text-muted small">
+                            <a href="{{ url_for('admin_login') }}" class="text-muted">Admin Login</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

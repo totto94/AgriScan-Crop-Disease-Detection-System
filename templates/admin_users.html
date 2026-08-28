@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Users - AgriScan{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2>👤 Registered Farmers</h2>
+        <p class="text-muted">Manage all farmer accounts</p>
+    </div>
+</div>
+
+<div class="card shadow">
+    <div class="card-body">
+        {% if users %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Location</th>
+                        <th>Diagnoses</th>
+                        <th>Joined</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ user.fullName }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.location or 'Not set' }}</td>
+                        <td>{{ user.diagnoses|length }}</td>
+                        <td>{{ user.createdAt[:10] if user.createdAt else 'N/A' }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger delete-user" data-id="{{ user.id }}">
+                                <i class="bi bi-trash"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <i class="bi bi-people" style="font-size: 64px; color: #ccc;"></i>
+            <p class="text-muted mt-3">No registered farmers yet</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.delete-user').forEach(btn => {
+    btn.addEventListener('click', function() {
+        if (confirm('Delete this user and all their diagnoses?')) {
+            const userId = this.dataset.id;
+            fetch('/admin/delete_user/' + userId, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        location.reload();
+                    }
+                });
+        }
+    });
+});
+</script>
+{% endblock %}

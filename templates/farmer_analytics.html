@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}Analytics - AgriScan{% endblock %}
+
+{% block extra_head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2>📊 Your Diagnosis Analytics</h2>
+        <p class="text-muted">Track your crop health trends and patterns</p>
+    </div>
+</div>
+
+<!-- Stats Cards -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary shadow">
+            <div class="card-body text-center">
+                <h3 class="display-6">{{ total }}</h3>
+                <p class="mb-0">Total Diagnoses</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success shadow">
+            <div class="card-body text-center">
+                <h3 class="display-6">{{ chart_labels|length }}</h3>
+                <p class="mb-0">Unique Diseases</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning shadow">
+            <div class="card-body text-center">
+                <h3 class="display-6">{{ diagnoses|selectattr('confidence', 'ge', 85)|list|length }}</h3>
+                <p class="mb-0">High Confidence</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-danger shadow">
+            <div class="card-body text-center">
+                <h3 class="display-6">{{ diagnoses|selectattr('confidence', 'lt', 70)|list|length }}</h3>
+                <p class="mb-0">Needs Review</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts -->
+<div class="row">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">🦠 Disease Distribution</h5>
+                <canvas id="diseaseChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">📋 Recent Diagnoses</h5>
+                <ul class="list-unstyled">
+                    {% for diag in diagnoses[-5:]|reverse %}
+                    <li class="mb-2 pb-2 border-bottom">
+                        <span class="badge bg-danger">{{ diag.diseaseName }}</span>
+                        <span class="badge bg-{{ 'success' if diag.confidence >= 85 else 'warning' if diag.confidence >= 70 else 'secondary' }}">
+                            {{ diag.confidence }}%
+                        </span>
+                        <br>
+                        <small class="text-muted">{{ diag.timestamp }}</small>
+                    </li>
+                    {% else %}
+                    <li class="text-muted">No diagnoses yet</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Monthly Trend -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">📈 Monthly Diagnosis Trend</h5>
+                <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Disease Distribution Chart
+const ctx1 = document.getElementById('diseaseChart').getContext('2d');
+new Chart(ctx1, {
+    type: 'pie',
+    data: {
+        labels: {{ chart_labels|tojson }},
+        datasets: [{
+            data: {{ chart_data|tojson }},
+            backgroundColor: ['#dc3545', '#28a745', '#ffc107', '#17a2b8', '#6f42c1', '#fd7e14', '#20c997', '#d63384']
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { position: 'bottom' }
+        }
+    }
+});
+
+// Monthly Trend Chart
+const ctx2 = document.getElementById('trendChart').getContext('2d');
+new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: {{ months|tojson }},
+        datasets: [{
+            label: 'Diagnoses per Month',
+            data: {{ month_counts|tojson }},
+            borderColor: '#2E7D32',
+            backgroundColor: 'rgba(46, 125, 50, 0.1)',
+            tension: 0.3,
+            fill: true
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            title: { display: false }
+        },
+        scales: {
+            y: { beginAtZero: true }
+        }
+    }
+});
+</script>
+{% endblock %}

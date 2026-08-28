@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}All Diagnoses - AgriScan{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2>🩺 All Farmer Diagnoses</h2>
+        <p class="text-muted">View all diagnoses made by farmers</p>
+    </div>
+</div>
+
+<div class="card shadow">
+    <div class="card-body">
+        {% if diagnoses %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="table-success">
+                    <tr>
+                        <th>#</th>
+                        <th>Farmer</th>
+                        <th>Disease</th>
+                        <th>Confidence</th>
+                        <th>Treatment</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for diag in diagnoses %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ diag.farmerName or 'Unknown' }}</td>
+                        <td><span class="badge bg-danger">{{ diag.diseaseName }}</span></td>
+                        <td>{{ diag.confidence }}%</td>
+                        <td><small>{{ diag.treatment[:50] + '...' if diag.treatment|length > 50 else diag.treatment }}</small></td>
+                        <td>{{ diag.timestamp }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <i class="bi bi-inbox" style="font-size: 64px; color: #ccc;"></i>
+            <p class="text-muted mt-3">No diagnoses recorded yet</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
